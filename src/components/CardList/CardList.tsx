@@ -1,25 +1,34 @@
-import React, { SyntheticEvent } from 'react'
-import Card from '../Card/Card'
-import { CompanySearch } from '../../company'
-import { v4 as uuid4 } from 'uuid'
+import React, { SyntheticEvent } from "react";
+import Card from "../Card/Card";
+import { CompanySearch } from "../../company";
+import { v4 as uuid4 } from "uuid";
 
 type Props = {
   searchResults: CompanySearch[];
   onPortfolioCreate: (e: SyntheticEvent) => void;
-}
+};
 
-const CardList = ({searchResults, onPortfolioCreate}: Props) => {
+const CardList = ({ searchResults, onPortfolioCreate }: Props) => {
   return (
-   <>
-    {searchResults.length > 0 ? (
-      searchResults.map((result) => {
-        return <Card id={result.symbol} key={uuid4()} searchResult={result} onPortfolioCreate={onPortfolioCreate}/>;
-      })
-    ): (
-      <h1>No results</h1>
-    )}
-   </>
-  )
-}
+    <>
+      {searchResults.length > 0 ? (
+        searchResults.map((result) => {
+          return (
+            <Card
+              id={result.symbol}
+              key={uuid4()}
+              searchResult={result}
+              onPortfolioCreate={onPortfolioCreate}
+            />
+          );
+        })
+      ) : (
+        <p className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+          No results!
+        </p>
+      )}
+    </>
+  );
+};
 
-export default CardList
+export default CardList;
