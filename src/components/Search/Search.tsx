@@ -15,7 +15,7 @@ const Search = ({ onSearchSubmit, search, handleSearchChange }: Props) => {
           onSubmit={onSearchSubmit}
         >
           <input
-            className="flex-1 p-3 border-2 rounded-lg placeholder-black focus:outline-none"
+            className="flex-1 p-3 border-2 rounded-lg placeholder-gray focus:outline-none"
             id="search-input"
             placeholder="Search companies"
             value={search}
